@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع التسوق</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">LIVA</div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="icons">
+                    <div class="filter-icon" id="filterIcon">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="login-icon" id="loginIcon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>مرحبًا بكم في LIVA</h1>
+            <p>اكتشف أفضل المنتجات بأفضل الأسعار.</p>
+        </section>
+        <section class="products">
+            <h2>المنتجات</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- سيتم عرض المنتجات هنا -->
+            </div>
+        </section>
+    </main>
+
+    <!-- نافذة تسجيل الدخول -->
+    <div class="login-popup" id="loginPopup">
+        <div class="login-content">
+            <h2>تسجيل الدخول</h2>
+            <form id="loginForm">
+                <label for="username">اسم المستخدم:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+            <button class="close-btn" id="closeLogin">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة الفلترة -->
+    <div class="filter-popup" id="filterPopup">
+        <div class="filter-content">
+            <h2>خيارات التصفية</h2>
+            <div class="filter-options">
+                <label for="filterPrice">تصفية حسب السعر:</label>
+                <select id="filterPrice">
+                    <option value="all">الكل</option>
+                    <option value="0-500">0 - 500 ريال</option>
+                    <option value="501-1000">501 - 1000 ريال</option>
+                    <option value="1001-2000">1001 - 2000 ريال</option>
+                    <option value="2001+">أكثر من 2000 ريال</option>
+                </select>
+                <label for="filterCategory">تصفية حسب الفئة:</label>
+                <select id="filterCategory">
+                    <option value="all">الكل</option>
+                    <option value="electronics">إلكترونيات</option>
+                    <option value="clothing">ملابس</option>
+                    <option value="home">منزل</option>
+                    <option value="sports">رياضة</option>
+                    <option value="LIVA products">منتجات LIVA الاصلية</option>
+                </select>
+            </div>
+            <button class="close-btn" id="closeFilter">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- نافذة الفاتورة -->
+    <div class="cart-popup" id="cartPopup">
+        <div class="cart-content">
+            <h2>فاتورة المشتريات</h2>
+            <table id="cartItemsTable">
+                <thead>
+                    <tr>
+                        <th>المنتج</th>
+                        <th>الكمية</th>
+                        <th>السعر</th>
+                        <th>الإجمالي</th>
+                        <th>إزالة</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- العناصر المضافة إلى السلة ستظهر هنا -->
+                </tbody>
+            </table>
+            <p>الإجمالي الُكلي: <span id="cartTotal">0</span> ريال</p>
+
+            <!-- قسم اختيار طريقة الدفع -->
+            <div class="payment-methods">
+                <h3>اختر طريقة الدفع:</h3>
+                <label>
+                    <input type="radio" name="paymentMethod" value="paypal" checked> PayPal
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="gib"> محفظة جيب
+                </label>
+            </div>
+
+            <button class="confirm-btn" id="confirmOrder">تنفيذ الطلب</button>
+            <button class="close-btn" id="closeCart">إغلاق</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
